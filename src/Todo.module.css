@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  width: 46rem;
+  justify-content: center;
+  padding: 1rem 3.25rem;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.todoDone {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.todo {
+  margin: 0 1rem;
+  color: var(--gray-100);
+}
+
+.container>p {
+  width: 39.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.checkbox {
+  display: inline-block;
+  height: 1.25rem;
+  width: calc(1.25rem + 2px);
+  line-height: 1.125rem;
+  border-radius: 50%;
+  appearance: none;
+  background: transparent;
+  border: 2px solid var(--blue);
+}
+
+.checkbox:checked {
+  background: var(--purple);
+  border: none;
+}
+
+.deleteButton {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--gray-300);
+  background: transparent;
+  border: 0;
+}
