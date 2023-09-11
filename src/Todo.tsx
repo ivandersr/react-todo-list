@@ -3,16 +3,27 @@ import { Trash } from "phosphor-react"
 import styles from './Todo.module.css';
 
 export interface TodoData {
-  id?: number;
+  id: number;
   done: boolean;
   description: string;
 }
 
-export const Todo = ({ done, description }: TodoData) => {
-  const [isDone, setIsDone] = useState(done);
+interface TodoProps {
+  todo: TodoData;
+  onDeleteTodo: (id: number) => void;
+  onToggleTodo: (todo: TodoData) => void;
+}
 
-  const handleDoneClick = () => {
+export const Todo = ({ todo, onDeleteTodo, onToggleTodo }: TodoProps) => {
+  const [isDone, setIsDone] = useState(todo.done);
+
+  const handleDeleteTodo = () => {
+    onDeleteTodo(todo.id);
+  }
+
+  const handleToggleTodo = () => {
     setIsDone(!isDone);
+    onToggleTodo(todo)
   }
 
   return (
@@ -20,11 +31,11 @@ export const Todo = ({ done, description }: TodoData) => {
       <input
         type="checkbox"
         checked={isDone}
-        onClick={handleDoneClick}
+        onChange={handleToggleTodo}
         className={styles.checkbox}
       />
-      <p className={isDone ? styles.todoDone : styles.todo}>{description} </p>
-      <button className={styles.deleteButton}>
+      <p className={isDone ? styles.todoDone : styles.todo}>{todo.description} </p>
+      <button className={styles.deleteButton} onClick={handleDeleteTodo}>
         <Trash size={16} />
       </button>
     </div>

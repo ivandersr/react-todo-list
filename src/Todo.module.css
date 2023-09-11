@@ -36,12 +36,17 @@
   appearance: none;
   background: transparent;
   border: 2px solid var(--blue);
-  padding: 0.25rem;
+  text-align: center;
+  color: var(--gray-100);
 }
 
 .checkbox:checked {
   background: var(--purple);
   border: none;
+}
+
+.checkbox:checked::before {
+  content: '\2714';
 }
 
 .deleteButton {
