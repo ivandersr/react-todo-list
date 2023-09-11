@@ -1,6 +1,6 @@
-import { Header } from "./Header"
-import { TodoData } from "./Todo";
-import { TodoList } from "./TodoList";
+import { Header } from "./components/Header"
+import { TodoData } from "./components/Todo";
+import { TodoList } from "./components/TodoList";
 
 import './global.css';
 
