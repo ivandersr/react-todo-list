@@ -11,7 +11,17 @@ function App() {
       id: 1,
       done: false,
       description: 'Um teste inicial de todos'
-    }
+    },
+    {
+      id: 2,
+      done: false,
+      description: 'Um teste inicial de todos'
+    },
+    {
+      id: 3,
+      done: false,
+      description: 'Um teste inicial de todos'
+    },
   ];
 
   return (
